@@ -84,7 +84,7 @@ console.log(calcFinalPrice(50, 10, .06));
 
 /*
     TEXT ANSWER HERE
-
+    A restaurant would probably want to know the following about their customers: name (obviously), address or phone number (to contact them, or to look them up is their system), what city they live in (for expansion purposes), and maybe a running total towards a tiered reward.
 */
 
 /*
@@ -93,3 +93,10 @@ console.log(calcFinalPrice(50, 10, .06));
 */
 
 //CODE HERE
+
+let customer = {
+    name: "name",
+    phone: "phoneNumber",
+    city: "city",
+    visitCounter: numVisits
+}
