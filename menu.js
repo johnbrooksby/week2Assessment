@@ -32,6 +32,15 @@
 
 //CODE HERE
 
+let pizza = {
+    name: "Little Caesars pepperoni",
+    price: 6.99,
+    category: "entree",
+    popularity: 8,
+    rating: 2,
+    tags: ["hot-n-ready", "cheap but okay", "only very good if it's fresh"]
+};
+
 
 
 //////////////////PROBLEM 2////////////////////
@@ -43,6 +52,7 @@
 */
 
 //CODE HERE
+console.log(`The popularity is ${pizza.popularity}`);
 
 
 /*
@@ -53,6 +63,7 @@
 */
 
 //CODE HERE
+console.log(pizza.tags[1]);
 
 
 /*
@@ -63,6 +74,8 @@
 */
 
 //CODE HERE
+let {price} = pizza;
+console.log(`$${price}`);
 
 
 /*
@@ -73,6 +86,8 @@
 */
 
 //CODE HERE
+let {category} = pizza;
+console.log(category);
 
 
 //////////////////PROBLEM 3////////////////////
@@ -89,6 +104,40 @@
 
 //CODE HERE
 
+let foodArr = [,
+    {   
+        name: "Little Caesars supreme",
+        price: 9.99,
+        category: "entree",
+        popularity: 5,
+        rating: 4,
+        tags: ["better call ahead", "plan on waiting", "only hot-n-ready if we mass produce it"]
+    },
+    {   
+        name: "Crazy Bread",
+        price: 3.99,
+        category: "appetizer",
+        popularity: 9,
+        rating: 9,
+        tags: ["good but not filling", "hot-n-ready", "the sauce makes them too cold"]
+    },
+    {   
+        name: "Slices-N-Stix",
+        price: 6.99,
+        category: "entree",
+        popularity: 7,
+        rating: 9,
+        tags: ["hard to share", "let's try to cut them the same size"]
+    },
+    {   
+        name: "Meat lovers",
+        price: 10.99,
+        category: "entree",
+        popularity: 6,
+        rating: 6,
+        tags: ["Sodium overload", "pretty good, but please bring some water"]
+    }
+];
 
 
 //////////////////PROBLEM 4////////////////////
@@ -105,9 +154,15 @@
 
 //CODE HERE
 
-// const filteredFood = foodArr.filter(/* CALLBACK HERE */)
+const filteredFood = foodArr.filter((e) => {
+    return e.tags.includes("better call ahead")
+    }
+);
 
+console.log(filteredFood);
 
+// or if you just want the name of the item:
+// console.log(filteredFood[0].name);
 
 //////////////////PROBLEM 5////////////////////
 /* 
@@ -149,6 +204,14 @@
 */
 
 //CODE HERE
+
+function filterByProperty(property, number, type){
+    let filteredArray = foodArr.filter((type) => {
+        if (type === "above"{
+            return 
+        })
+    } )
+}
 
 
 /*
