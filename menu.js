@@ -104,13 +104,13 @@ console.log(category);
 
 //CODE HERE
 
-let foodArr = [,
+let foodArr = [
     {   
-        name: "Little Caesars supreme",
-        price: 9.99,
+        name: "Little Caesars Supreme",
+        price: 10.00,
         category: "entree",
         popularity: 5,
-        rating: 4,
+        rating: 7,
         tags: ["better call ahead", "plan on waiting", "only hot-n-ready if we mass produce it"]
     },
     {   
@@ -118,7 +118,7 @@ let foodArr = [,
         price: 3.99,
         category: "appetizer",
         popularity: 9,
-        rating: 9,
+        rating: 7,
         tags: ["good but not filling", "hot-n-ready", "the sauce makes them too cold"]
     },
     {   
@@ -126,15 +126,15 @@ let foodArr = [,
         price: 6.99,
         category: "entree",
         popularity: 7,
-        rating: 9,
+        rating: 8,
         tags: ["hard to share", "let's try to cut them the same size"]
     },
     {   
-        name: "Meat lovers",
+        name: "Meat Lovers",
         price: 10.99,
         category: "entree",
-        popularity: 6,
-        rating: 6,
+        popularity: 8,
+        rating: 5,
         tags: ["Sodium overload", "pretty good, but please bring some water"]
     }
 ];
@@ -176,8 +176,8 @@ console.log(filteredFood);
     that takes in three arguments: `property`, 
     `number`, and `type. 
 
-    The property will be a string (rating,
-    popularity, or price)
+    The property will be a string ("rating",
+    "popularity", or "price")
 
     The number will be the number that you want
     to compare against 
@@ -187,16 +187,16 @@ console.log(filteredFood);
     values that are above or below the given number
     for the given property
 
-    Inside the function, create a variable to hold
-    a filtered array
+    *****Inside the function, create a variable to hold
+    a filtered array***********************************
 
     Use the filter method to filter the foodArr
 
-        In the callback, check if the `type` is `above`, 
+        IN THE CALLBACK, check if the `type` is `above`, 
         if it is, return objects whose value for the given
         property is greater than the `number` passed in
 
-        If the type isn't `below`, return objects whose
+        If the type is `below`, return objects whose
         value for the given property is less than the 
         `number` passed in
     
@@ -205,11 +205,38 @@ console.log(filteredFood);
 
 //CODE HERE
 
-// function filterByProperty((property, number, aboveOrBelow){
-//     let filteredArray = foodArr.filter((aboveOrBelow) => {
-//         return aboveOrBelow === "above"
-//     })
-// })
+function filterByProperty(property, number, type){
+    let newFilter = foodArr.filter((e) => {
+        if (type === "above"){
+            if (property === "price"){
+                return e.price > number;
+            } else if (property === "popularity"){
+                return e.popularity > number;
+            } else if (property === "rating") {
+                return e.rating > number;
+            }else {
+                console.log("Cannot compute with current parameters")
+            }
+        } else if (type === "below"){
+            if (property === "price"){
+                return e.price < number;
+            } else if (property === "popularity"){
+                return e.popularity < number;
+            } else if (property ==="rating") {
+                return e.rating < number;
+            }else {
+                console.log("Cannot compute with current parameters")
+            }
+        } else {
+            console.log("Cannot compute with current parameters")
+        }
+    })
+    return newFilter;
+}
+
+
+
+
 
 
 /*
@@ -220,5 +247,5 @@ console.log(filteredFood);
 */
 
 //CODE HERE
-
-// filterByProperty("price", 10, "below");
+console.log("-----------------------");
+console.log(filterByProperty("rating", 6, "above"));
